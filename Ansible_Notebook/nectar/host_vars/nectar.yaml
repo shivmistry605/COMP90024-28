@@ -1,0 +1,55 @@
+# Common vars
+availability_zone: melbourne-qh2-uom
+
+# Volume
+volumes:
+  - vol_name: project-vol-1
+    vol_size: 60
+  - vol_name: project-vol-2
+    vol_size: 60
+  - vol_name: project-vol-3
+    vol_size: 60
+# Security group
+security_groups:
+  - name: key_ssh
+    description: "Project security group for SSH access"
+    protocol: tcp
+    port_range_min: 22
+    port_range_max: 22
+    remote_ip_prefix: 0.0.0.0/0
+  - name: key_http
+    description: "Project security group for HTTP"
+    protocol: tcp
+    port_range_min: 80
+    port_range_max: 80
+    remote_ip_prefix: 0.0.0.0/0
+  - name: port_for_couch
+    description: "Project security group for couchDB"
+    protocol: tcp
+    port_range_min: 5984
+    port_range_max: 5984
+    remote_ip_prefix: 0.0.0.0/0
+  - name: port_couch
+    description: "Project security group for couchDB"
+    protocol: tcp
+    port_range_min: 4369
+    port_range_max: 4369
+    remote_ip_prefix: 0.0.0.0/0
+  - name: port_fr_couch
+    description: "Project security group for couchDB"
+    protocol: tcp
+    port_range_min: 9100
+    port_range_max: 9200
+    remote_ip_prefix: 0.0.0.0/0
+# Instance
+instances:
+  - name: project-1
+    volumes: ['project-vol-1']
+  - name: project-2
+    volumes: ['project-vol-2']
+  - name: project-3
+    volumes: ['project-vol-3']
+
+instance_image: 45225edb-66d8-4fd0-bf41-132a31a18166
+instance_key_name: main
+instance_flavor: uom.mse.2c9g

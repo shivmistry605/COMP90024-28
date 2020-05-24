@@ -1,0 +1,113 @@
+---
+# Install dependencies on the host
+- name: Install pip
+  become: yes
+  apt:
+    name: ['python3-pip']
+    state: latest
+    update_cache: yes
+  when: ansible_distribution == "Ubuntu"
+# sudo apt-get update; sudo apt-get install python3-pip
+
+
+- name: populate /etc/environment
+  lineinfile:
+    dest: "/etc/environment"
+    state: present
+    line: "HTTP_PROXY=http://wwwproxy.unimelb.edu.au:8000/"
+
+- name: populate /etc/environment
+  lineinfile:
+    dest: "/etc/environment"
+    state: present
+    line: "HTTPS_PROXY=http://wwwproxy.unimelb.edu.au:8000/"
+
+- name: populate /etc/environment
+  lineinfile:
+    dest: "/etc/environment"
+    state: present
+    line: "http_proxy=http://wwwproxy.unimelb.edu.au:8000/"
+
+
+- name: populate /etc/environment
+  lineinfile:
+    dest: "/etc/environment"
+    state: present
+    line: "https_proxy=http://wwwproxy.unimelb.edu.au:8000/"
+
+
+- name: populate /etc/environment
+  lineinfile:
+    dest: "/etc/environment"
+    state: present
+    line: "no_proxy=localhost,127.0.0.1,localaddress,172.16.0.0/12,.melbourne.rc.nectar.org.au,.storage.unimelb.edu.au,.cloud.unimelb.edu.au"
+
+- name: Update pip
+  become: yes
+  pip:
+    name: ['pip']
+    state: latest
+# pip3 install --upgrade pip
+
+- name: Install openstacksdk
+  become: yes
+  pip:
+    name: ['openstacksdk']
+    state: latest
+# pip3 install openstacksdk
+
+- name: Install requests
+  become: yes
+  pip:
+    name: ['json']
+    state: latest
+#pip3 install json
+
+- name: Install urllib3
+  become: yes
+  pip:
+    name: ['urllib3']
+    state: latest
+#pip3 install urllib3
+
+- name: Install tweepy
+  become: yes
+  pip:
+    name: ['tweepy']
+    state: latest
+#pip3 install tweepy
+
+- name: Install requests
+  become: yes
+  pip:
+    name: ['requests']
+    state: latest
+#pip3 install requests
+
+
+
+# Create a folder
+- name: Create a directory if it does not exist
+  file:
+    path: /home/ubuntu/Project
+    state: directory
+    mode: '0755'
+
+- name: Copy harvester to instances
+  copy:
+    src: /home/skynet/Desktop/streaming.py
+    dest: /home/ubuntu/Project
+    owner: root
+    group: root
+    mode: '0755'
+#Copy file to Project folder
+
+- name: Run the shell script to execute the python file and run it in background
+  shell:
+    cmd: "nohup python3 streaming.py &"
+    chdir: /home/ubuntu/Project/
+#execute harvester and run in background
+
+
+
+ 
