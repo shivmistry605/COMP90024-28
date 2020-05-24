@@ -95,7 +95,7 @@
 
 - name: Copy harvester to instances
   copy:
-    src: /home/skynet/Desktop/streaming.py
+    src: /streaming.py
     dest: /home/ubuntu/Project
     owner: root
     group: root
