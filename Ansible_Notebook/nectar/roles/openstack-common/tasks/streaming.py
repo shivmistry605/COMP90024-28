@@ -2,6 +2,7 @@ from __future__ import absolute_import, print_function
 import json
 import re
 import config
+import couchdb
 from urllib3.exceptions import ProtocolError
 from tweepy import OAuthHandler, Stream, StreamListener
 import requests
@@ -27,10 +28,16 @@ class StdOutListener(StreamListener):
         #if there.search(data.text.lower()):
         language=["it","el","zh","ar","de"]
         data_json=json.loads(data)
-        for i in language:
-            if(data_json["lang"]== i):
-               save_file.write(data)
-               response=requests.post(url,data=data,headers=headers)
+        for id in db:
+            if(db[id]["id"]==data_json["id"]):
+                i=1
+            else:
+                i=0
+        if(i==0):
+            for i in language:
+                if(data_json["lang"]== i):
+                    save_file.write(data)
+                    response=requests.post(url,data=data,headers=headers)
 
         return True
      
@@ -40,6 +47,8 @@ class StdOutListener(StreamListener):
 
 
 if __name__ == '__main__':
+    couch = couchdb.Server('https://admin:admin1234@172.26.129.166:5984/')
+    db=['instance3_new']
     url='http://admin:admin1234@172.26.132.189:5984/instance3_new/'
     headers={'Content-Type': 'application/json'}
     save_file = open('Sydmelb_alllang.json','a')
