@@ -1,0 +1,2 @@
+To create CouchDB on instance 3 run the following command:
+ansible-playbook -i ~/Ansible_Notebook/dbserver/inventory/hosts.ini -u ubuntu config_dbserver.yml
