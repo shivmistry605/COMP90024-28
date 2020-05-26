@@ -29,12 +29,12 @@
     
 - name: create script
   copy:
-    src: /roles/config-dbserver/scripts/log_run
+    src: /roles/config_couchdb/scripts/log_run
     dest: /etc/sv/couchdb/log/run
 
 - name: create script
   copy:
-    src: /roles/config-dbserver/scripts/run
+    src: /roles/config_couchdb/scripts/run
     dest: /etc/sv/couchdb/run
    
 - name: make scripts executable
