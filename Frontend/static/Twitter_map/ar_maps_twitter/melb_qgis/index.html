@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <style>
+        #map {
+            width: 1619px;
+            height: 866px;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/8ccc26b6771d4bacb125880fec0b363c_0.js"></script>
+        <script src="data/ar__instance1tweets_1.js"></script>
+        <script src="data/ar_tweets_2.js"></script>
+        <script src="data/ar_tweets_i3_3.js"></script>
+        <script src="data/ar_tweets_4.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[-38.6889246582584,143.56602476807848],[-36.913114382046125,146.88950302807262]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        function pop_8ccc26b6771d4bacb125880fec0b363c_0(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['0chinese_m'] !== null ? autolinker.link(feature.properties['0chinese_m'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['1arabic_le'] !== null ? autolinker.link(feature.properties['1arabic_le'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['2sla_5digi'] !== null ? autolinker.link(feature.properties['2sla_5digi'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['greek_male'] !== null ? autolinker.link(feature.properties['greek_male'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['3sla_name_'] !== null ? autolinker.link(feature.properties['3sla_name_'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['4italian_m'] !== null ? autolinker.link(feature.properties['4italian_m'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['5german_ma'] !== null ? autolinker.link(feature.properties['5german_ma'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['6sla_mainc'] !== null ? autolinker.link(feature.properties['6sla_mainc'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_8ccc26b6771d4bacb125880fec0b363c_0_0() {
+            return {
+                pane: 'pane_8ccc26b6771d4bacb125880fec0b363c_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(207,194,198,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_8ccc26b6771d4bacb125880fec0b363c_0');
+        map.getPane('pane_8ccc26b6771d4bacb125880fec0b363c_0').style.zIndex = 400;
+        map.getPane('pane_8ccc26b6771d4bacb125880fec0b363c_0').style['mix-blend-mode'] = 'normal';
+        var layer_8ccc26b6771d4bacb125880fec0b363c_0 = new L.geoJson(json_8ccc26b6771d4bacb125880fec0b363c_0, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_8ccc26b6771d4bacb125880fec0b363c_0',
+            layerName: 'layer_8ccc26b6771d4bacb125880fec0b363c_0',
+            pane: 'pane_8ccc26b6771d4bacb125880fec0b363c_0',
+            onEachFeature: pop_8ccc26b6771d4bacb125880fec0b363c_0,
+            style: style_8ccc26b6771d4bacb125880fec0b363c_0_0,
+        });
+        bounds_group.addLayer(layer_8ccc26b6771d4bacb125880fec0b363c_0);
+        map.addLayer(layer_8ccc26b6771d4bacb125880fec0b363c_0);
+        function pop_ar__instance1tweets_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['city'] !== null ? autolinker.link(feature.properties['city'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['user'] !== null ? autolinker.link(feature.properties['user'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['lang'] !== null ? autolinker.link(feature.properties['lang'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ar__instance1tweets_1_0() {
+            return {
+                pane: 'pane_ar__instance1tweets_1',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(50,87,128,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(72,123,182,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ar__instance1tweets_1');
+        map.getPane('pane_ar__instance1tweets_1').style.zIndex = 401;
+        map.getPane('pane_ar__instance1tweets_1').style['mix-blend-mode'] = 'normal';
+        var layer_ar__instance1tweets_1 = new L.geoJson(json_ar__instance1tweets_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ar__instance1tweets_1',
+            layerName: 'layer_ar__instance1tweets_1',
+            pane: 'pane_ar__instance1tweets_1',
+            onEachFeature: pop_ar__instance1tweets_1,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_ar__instance1tweets_1_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_ar__instance1tweets_1);
+        map.addLayer(layer_ar__instance1tweets_1);
+        function pop_ar_tweets_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['city'] !== null ? autolinker.link(feature.properties['city'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['user'] !== null ? autolinker.link(feature.properties['user'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['lang'] !== null ? autolinker.link(feature.properties['lang'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ar_tweets_2_0() {
+            return {
+                pane: 'pane_ar_tweets_2',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(50,87,128,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(72,123,182,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ar_tweets_2');
+        map.getPane('pane_ar_tweets_2').style.zIndex = 402;
+        map.getPane('pane_ar_tweets_2').style['mix-blend-mode'] = 'normal';
+        var layer_ar_tweets_2 = new L.geoJson(json_ar_tweets_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ar_tweets_2',
+            layerName: 'layer_ar_tweets_2',
+            pane: 'pane_ar_tweets_2',
+            onEachFeature: pop_ar_tweets_2,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_ar_tweets_2_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_ar_tweets_2);
+        map.addLayer(layer_ar_tweets_2);
+        function pop_ar_tweets_i3_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['city'] !== null ? autolinker.link(feature.properties['city'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['user'] !== null ? autolinker.link(feature.properties['user'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['lang'] !== null ? autolinker.link(feature.properties['lang'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ar_tweets_i3_3_0() {
+            return {
+                pane: 'pane_ar_tweets_i3_3',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(50,87,128,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(72,123,182,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ar_tweets_i3_3');
+        map.getPane('pane_ar_tweets_i3_3').style.zIndex = 403;
+        map.getPane('pane_ar_tweets_i3_3').style['mix-blend-mode'] = 'normal';
+        var layer_ar_tweets_i3_3 = new L.geoJson(json_ar_tweets_i3_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ar_tweets_i3_3',
+            layerName: 'layer_ar_tweets_i3_3',
+            pane: 'pane_ar_tweets_i3_3',
+            onEachFeature: pop_ar_tweets_i3_3,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_ar_tweets_i3_3_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_ar_tweets_i3_3);
+        map.addLayer(layer_ar_tweets_i3_3);
+        function pop_ar_tweets_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['city'] !== null ? autolinker.link(feature.properties['city'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['user'] !== null ? autolinker.link(feature.properties['user'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ar_tweets_4_0() {
+            return {
+                pane: 'pane_ar_tweets_4',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(50,87,128,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(72,123,182,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ar_tweets_4');
+        map.getPane('pane_ar_tweets_4').style.zIndex = 404;
+        map.getPane('pane_ar_tweets_4').style['mix-blend-mode'] = 'normal';
+        var layer_ar_tweets_4 = new L.geoJson(json_ar_tweets_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ar_tweets_4',
+            layerName: 'layer_ar_tweets_4',
+            pane: 'pane_ar_tweets_4',
+            onEachFeature: pop_ar_tweets_4,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_ar_tweets_4_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_ar_tweets_4);
+        map.addLayer(layer_ar_tweets_4);
+        setBounds();
+        </script>
+    </body>
+</html>
