@@ -1,0 +1,4 @@
+- hosts: dbserver
+  sudo: yes
+  roles:
+    - config_couchdb
